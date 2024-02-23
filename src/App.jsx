@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Title from "./component/Title";
-import Input from "./component/Input"
+import Input from "./component/Input";
+import RmTask from "./component/RmTask";
 
 function App() {
 
@@ -13,20 +14,10 @@ function App() {
 
   return (
     <>
-    <Title />
+    <Title/>
     <Input jobs={jobs} setJobs={setJobs}/>
-    <div>
-      {
-        jobs.map((job) => {
-          return(
-            <div key={job.task}>
-            <button>finish</button>
-            <p>{job.task}</p>
-            </div>
-          )
-          })
-      }
-    </div>
+    <br/>
+    <RmTask jobs={jobs} setJobs={setJobs}/>
     </>
   )
 }
