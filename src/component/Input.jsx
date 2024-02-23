@@ -12,7 +12,8 @@ const Input = ({ jobs, setJobs}) => {
 
     return(
         <>
-        <input 
+        <input
+        id="input"
         placeholder="add task..."
         type="text"
         onChange={(e) => setWork(e.target.value)}
