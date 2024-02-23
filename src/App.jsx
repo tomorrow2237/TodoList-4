@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Title from "./component/Title";
+import Input from "./component/Input"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
     <Title />
+    <Input jobs={jobs} setJobs={setJobs}/>
     <div>
       {
         jobs.map((job) => {
