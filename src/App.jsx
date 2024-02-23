@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Title from "./component/Title";
 
 function App() {
 
@@ -11,10 +12,19 @@ function App() {
 
   return (
     <>
-    <h1>Symplized Todo List</h1>
-      {jobs.map((job) => {
-        <h4>{job.task}</h4>
-        })}
+    <Title />
+    <div>
+      {
+        jobs.map((job) => {
+          return(
+            <div key={job.task}>
+            <button>finish</button>
+            <p>{job.task}</p>
+            </div>
+          )
+          })
+      }
+    </div>
     </>
   )
 }
