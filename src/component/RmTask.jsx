@@ -3,6 +3,7 @@ const RmTask = ({jobs, setJobs}) => {
         const newChores = jobs.filter((job) => job.id !== id)
         setJobs(newChores)
     }
+    
     return (
         <>
         {jobs.map((job) => {
