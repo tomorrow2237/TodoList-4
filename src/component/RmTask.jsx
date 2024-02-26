@@ -1,17 +1,17 @@
-const RmTask = ({jobs, setJobs}) => {
+const RmTask = ({tasks, setTasks}) => {
     
     const killTask = (id) => {
-        const newChores = jobs.filter((job) => job.id !== id)
-        setJobs(newChores)
+        const newChores = tasks.filter((task) => task.id !== id)
+        setTasks(newChores)
     }
 
     return (
         <>
-        {jobs.map((job) => {
+        {tasks.map((task) => {
             return (
-            <div key={job.id}>
-            <button key={job.id} id={job.id} onClick={() => killTask(job.id)}>finish</button>
-            <p key={job.task}>{job.task}</p>
+            <div key={task.id}>
+            <button key={task.id} id={task.id} onClick={() => killTask(task.id)}>finish</button>
+            <p key={task.task}>{task.task}</p>
             </div>
             )
         })}

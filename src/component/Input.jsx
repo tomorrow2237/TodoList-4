@@ -1,13 +1,33 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const Input = ({ jobs, setJobs}) => {
+const Input = ({ tasks, setTasks}) => {
     const [ work,setWork ] = useState("");
     const upDateList = () => {
-        const newJobs = [...jobs, {
-            id: Date.now(), task: work
-        }]
-        setJobs(newJobs)
-        setWork("")
+
+        if(work === "") {
+            toast.error("Non task!", {
+                autoClose: 2000,
+                pauseOnHover: false,
+                draggable: true,
+                closeOnClick: true,
+                hideProgressBar: true,
+            })
+        } else {
+            const newJobs = [...tasks, {
+                id: Date.now(), task: work
+            }]
+            setTasks(newJobs)
+            setWork("")
+
+            toast.success("Complete", {
+                autoClose: 2000,
+                pauseOnHover: false,
+                draggable: true,
+                closeOnClick: true,
+                hideProgressBar: true,
+            })
+        }
     }
 
     return(
