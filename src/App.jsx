@@ -17,9 +17,7 @@ function App() {
 
   return (
     <>
-    <ToastContainer 
-    pauseOnHover: false
-    />
+    <ToastContainer/>
     <Title/>
     <Input tasks={tasks} setTasks={setTasks}/>
     <RmTask tasks={tasks} setTasks={setTasks}/>
