@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const Input = ({ tasks, setTasks}) => {
+import StyledButton from "./Styling";
+import StyledInput from "./InputStyling";
+
+const Input = ({ tasks, setTasks }) => {
     const [ work,setWork ] = useState("");
+    const [isclick,setIsClick] = useState('true');
+
     const upDateList = () => {
 
         if(work === "") {
@@ -32,15 +37,23 @@ const Input = ({ tasks, setTasks}) => {
 
     return(
         <>
-        <input
+        <StyledInput
         id="input"
         placeholder="add task..."
         type="text"
         onChange={(e) => setWork(e.target.value)}
         value={work}
         >
-        </input>
-        <button onClick={upDateList}>add</button>
+        </StyledInput>
+        <StyledButton
+        isclick={isclick ? true : undefined} 
+        onMouseDown={() => setIsClick((prev) => (!prev))}
+        onMouseUp={() => setIsClick((prev) => (!prev))}
+        onMouseLeave={() => setIsClick(prev => prev ? prev : !prev)}
+        onClick={upDateList}
+        >
+        add
+        </StyledButton>
         </>
     )
 }

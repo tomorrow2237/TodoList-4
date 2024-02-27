@@ -1,9 +1,13 @@
 import styled,{ css } from "styled-components"
 
 const StyledButton = styled.button`
+position: absolute;
+top: 50%;
+left: 76%;
+transform: translate(-50%, -50%);
 background: #FF4742;
 border: 1px solid #FF4742;
-border-radius: 6px;
+border-radius: 3px;
 box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
 box-sizing: border-box;
 color: #FFFFFF;
