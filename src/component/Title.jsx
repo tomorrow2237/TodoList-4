@@ -1,4 +1,4 @@
-import StyledTitle from "./StylingTitle"
+import StyledTitle from "../Style/StylingTitle"
 
 const Title = () => {
     return (

@@ -3,7 +3,7 @@ import styled,{ css } from "styled-components"
 const StyledButton = styled.button`
 position: absolute;
 top: 50%;
-left: 76%;
+left: 72%;
 transform: translate(-50%, -50%);
 background: #FF4742;
 border: 1px solid #FF4742;

@@ -1,6 +1,10 @@
 import { useState } from "react"
 import React from "react"
 
+import StyledList from "../Style/StylingList"
+
+import { StyledTaskItem,StyledIcon, StyledTaskText } from "../Style/StylingList"
+import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 
 const RmTask = ({tasks, setTasks}) => {
     
@@ -10,16 +14,16 @@ const RmTask = ({tasks, setTasks}) => {
     }
 
     return (
-        <>
+        <StyledList>
         {tasks.map((task) => {
             return (
-            <div key={task.id}>
-            <button key={task.id} id={task.id} onClick={() => killTask(task.id)}>finish</button>
-            <p key={task.task}>{task.task}</p>
-            </div>
+            <StyledTaskItem key={task.id}>
+            <StyledIcon icon={faSquareCheck} key={task.id} id={task.id} onClick={() => killTask(task.id)}></StyledIcon>
+            <StyledTaskText key={task.task}>{task.task}</StyledTaskText>
+            </StyledTaskItem>
             )
         })}
-        </>
+        </StyledList>
     )
 }
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-import StyledButton from "./Styling";
-import StyledInput from "./InputStyling";
+import StyledButton from "../Style/StylingButton";
+import StyledInput from "../Style/InputStyling";
 
 const Input = ({ tasks, setTasks }) => {
     const [ work,setWork ] = useState("");
@@ -46,7 +46,7 @@ const Input = ({ tasks, setTasks }) => {
         >
         </StyledInput>
         <StyledButton
-        isclick={isclick ? true : undefined} 
+        isclick={isclick.toString} 
         onMouseDown={() => setIsClick((prev) => (!prev))}
         onMouseUp={() => setIsClick((prev) => (!prev))}
         onMouseLeave={() => setIsClick(prev => prev ? prev : !prev)}
