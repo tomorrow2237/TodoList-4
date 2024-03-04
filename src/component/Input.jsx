@@ -46,7 +46,7 @@ const Input = ({ tasks, setTasks }) => {
         >
         </StyledInput>
         <StyledButton
-        isclick={isclick.toString} 
+        isclick={isclick} 
         onMouseDown={() => setIsClick((prev) => (!prev))}
         onMouseUp={() => setIsClick((prev) => (!prev))}
         onMouseLeave={() => setIsClick(prev => prev ? prev : !prev)}
