@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-import StyledButton from "../Style/StylingButton";
-import StyledInput from "../Style/InputStyling";
+import StyledButton from "../style/StylingButton";
+import StyledInput from "../style/InputStyling";
+import { useTodos } from "../context/SetComtext";
 
-const Input = ({ tasks, setTasks }) => {
+const Input = () => {
     const [ work,setWork ] = useState("");
     const [isclick,setIsClick] = useState('true');
+
+    const [tasks,setTasks] = useTodos();
 
     const upDateList = () => {
 
@@ -22,6 +25,7 @@ const Input = ({ tasks, setTasks }) => {
             const newJobs = [...tasks, {
                 id: Date.now(), task: work
             }]
+
             setTasks(newJobs)
             setWork("")
 

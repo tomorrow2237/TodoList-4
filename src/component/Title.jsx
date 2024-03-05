@@ -1,11 +1,11 @@
-import StyledTitle from "../Style/StylingTitle"
+import StyledTitle from "../style/StylingTitle";
 
 const Title = () => {
     return (
-    <label htmlFor="input">
-    <StyledTitle>Symplized Todo List</StyledTitle>
-    </label>
-    )
+        <label htmlFor="input">
+            <StyledTitle>Simplified Todo List</StyledTitle>
+        </label>
+    );
 }
 
-export default Title
+export default Title;

@@ -1,12 +1,14 @@
-import { useState } from "react"
 import React from "react"
 
-import StyledList from "../Style/StylingList"
+import StyledList from "../style/StylingList"
 
-import { StyledTaskItem,StyledIcon, StyledTaskText } from "../Style/StylingList"
+import { StyledTaskItem,StyledIcon, StyledTaskText } from "../style/StylingList"
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+import { useTodos } from "../context/SetComtext";
 
-const RmTask = ({tasks, setTasks}) => {
+const RmTask = () => {
+
+    const [tasks,setTasks] = useTodos();
     
     const killTask = (id) => {
         const newChores = tasks.filter((task) => task.id !== id)
