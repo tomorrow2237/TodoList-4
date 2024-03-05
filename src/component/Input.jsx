@@ -7,9 +7,9 @@ import { useTodos } from "../context/SetComtext";
 
 const Input = () => {
     const [ work,setWork ] = useState("");
-    const [isclick,setIsClick] = useState('true');
+    const [isclick,setIsClick] = useState("true");
 
-    const [tasks,setTasks] = useTodos();
+    const [,dispachFn] = useTodos();
 
     const upDateList = () => {
 
@@ -22,11 +22,8 @@ const Input = () => {
                 hideProgressBar: true,
             })
         } else {
-            const newJobs = [...tasks, {
-                id: Date.now(), task: work
-            }]
 
-            setTasks(newJobs)
+            dispachFn({type: "update", payload :{ task: work }})
             setWork("")
 
             toast.success("Complete", {

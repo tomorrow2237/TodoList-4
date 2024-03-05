@@ -8,11 +8,12 @@ import { useTodos } from "../context/SetComtext";
 
 const RmTask = () => {
 
-    const [tasks,setTasks] = useTodos();
+    const [tasks,dispatchFn] = useTodos();
     
     const killTask = (id) => {
-        const newChores = tasks.filter((task) => task.id !== id)
-        setTasks(newChores)
+        // const newChores = tasks.filter((task) => task.id !== id)
+        // setTasks(newChores)
+        dispatchFn({type:"remove", payload:{id: id}})
     }
 
     return (
